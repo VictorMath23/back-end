@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Reservas Hotel</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="recoverydata.js"></script>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <style>
+        tbody > tr:nth-child(2n) {
+            background-color: rgba(176, 176, 176, 0.299);
+        }
+
+        table#my-table{
+            background-image: url(../imagens/fundo2.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        td,
+        tr 
+        {
+            padding: auto;
+            border: 1px solid rgb(218, 196, 112);
+            font-weight: bold;
+            font-size: 1em;
+            white-space: nowrap;
+            text-shadow: rgb(0, 0, 0) 2px 1px 2px;
+        }
+        
+    </style>
+</head>
+
+<body>
+        <div id="table-container">
+            <table class="table-bordered table-responsive-sm" id="my-table">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>E-mail</th>
+                        <th>Data de entrada</th>
+                        <th>Data de Saída</th>
+                        <th>Observações</th>
+                        <th>Adultos</th>
+                        <th>Crianças</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+   
+</body>
+
+</html>

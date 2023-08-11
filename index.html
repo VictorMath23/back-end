@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
+    <script src="reservaajax.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .position-relative:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+        .position-absolute{
+            text-shadow: 1px 2px 1px black;
+        }
+    </style>
+</head>
+<body>
+    
+    <header style="background-color: orange;">
+        <img src="imagens/logo2.png" alt="" style="width: 60px; height: 60px; padding: 2px; margin-left: 20px;">
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="result" class="alert" style="display: none;"></div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+            <div class="row align-items-center d-flex justify-content-center" style="gap: 10px; margin-top: 20px;">
+                <div class="col-md-3">
+                    <div class="card" style="padding: 5px;">
+                        <div class="card-body">
+                            <h4 class="card-title">Sinta o conforto acolhedor de nossas hospedagens</h4>
+                            <p class="card-text">Hospede-se nos nossos hotéis com quartos a partir de R$100,00.</p>
+                            <a href="#" class="btn btn-primary" style="border-radius: 20px; width: 150px;">SAIBA MAIS</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <img src="imagens/img1.jpg" class="img-fluid" alt="..." style="width: 100%; box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.288);">
+                </div>
+            </div>
+        </div>
+        <div class="container text-center">
+            <div class="row align-items-center d-flex justify-content-center" style="gap: 3px;">
+                <div class= "col-md-12 text-center" style="padding: 40px;">
+                    <h3>POR QUE SE HOSPEDAR EM NOSSOS HOTÉIS?</h3>
+                </div>
+                <div class="card mb-3 border border-0" style="max-width: 540px;">
+                    <div class="row g-0">
+                      <div class="col-md-6" style="margin-right: -70px;">
+                        <img src="imagens/cafe.png" class="img-fluid rounded-start" alt="..." style="height: 80px;">
+                      </div>
+                      <div class="col-md-6">
+                        <div class="card-body">
+                          <h5 class="card-title">Delicioso café da manhã</h5>
+                          <p class="card-text">Incluso em todas as diárias.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card mb-3 border border-0" style="max-width: 540px;">
+                    <div class="row g-0">
+                      <div class="col-md-6" style="margin-right: -70px; margin-top: 18px;">
+                        <img src="imagens/localização.png" class="img-fluid rounded-start" alt="..." style="height: 70px;">
+                      </div>
+                      <div class="col-md-6">
+                        <div class="card-body">
+                          <h5 class="card-title">Fácil acesso</h5>
+                          <p class="card-text">Perto dos principais pontos turísticos.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="row align-items-center d-flex justify-content-center text-center">
+                <div class="col-md-4">
+                    <div class="position-relative">
+                        <img src="imagens/solteiro.jpg" alt="" class="img-thumbnail" style="height: 230px; width: 300px;">
+                        <div class="position-absolute top-50 start-50 translate-middle text-white text-center hover-overlay">
+                            <strong>Suíte Solteiro</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="position-relative">
+                        <img src="imagens/casal.jpg" alt="" class="img-thumbnail" style="height: 230px; width: 300px;">
+                        <div class="position-absolute top-50 start-50 translate-middle text-white text-center hover-overlay">
+                            <strong>Suíte Casal</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="position-relative">
+                        <img src="imagens/master.jpg" alt="" class="img-thumbnail" style="height: 230px; width: 300px;">
+                        <div class="position-absolute top-50 start-50 translate-middle text-white text-center hover-overlay">
+                            <strong>Suíte Master</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid align-items-center d-flex justify-content-center" style="background-color: rgba(255, 170, 0, 0.247); margin-top: 20px;">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-3">
+                    <h2>FAÇA SUA RESERVA</h2>
+                    <p>Entre em contato conosco informando as datas desejadas. Lhe retornaremos informando a disponibilidade e repassado detalhes da sua reserva</p>
+                </div>
+                <div class="col-md-3">
+                    <form method="post" action="#" id="frm"> 
+                        <div class="mb-3"> 
+                            <label for="txtNome" class="form-label">Nome:</label> 
+                            <input id="txtNome" class="form-control" type="text" name="nome" required> 
+                        </div> 
+                        <div class="mb-3"> 
+                            <label for="txtEntrada" class="form-label">Data de entrada:</label> 
+                            <input id="txtEntrada" class="form-control" type="date" name="dataentrada" required> 
+                        </div> 
+                        <div class="mb-3">
+                            <label for="txtObs" class="form-label">Observações:</label>
+                            <textarea id="txtObs" class="form-control" rows="4" name="observacoes"></textarea>
+                        </div>
+                     
+                </div>
+                <div class="col-md-3">
+                     
+                        <div class="mb-3"> 
+                            <label for="txtEmail" class="form-label">E-mail:</label> 
+                            <input id="txtEmail" class="form-control" type="text" name="email"> 
+                        </div> 
+                        <div class="mb-3"> 
+                            <label for="txtSaida" class="form-label">Data de saída:</label> 
+                            <input id="txtSaida" class="form-control" type="date" name="datasaida" required> 
+                        </div> 
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="txtAdulto" class="form-label">Adultos:</label>
+                                <input id="txtAdulto" class="form-control" type="number" name="adultos" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="txtCrianca" class="form-label">Crianças:</label>
+                                <input id="txtCrianca" class="form-control" type="number" name="criancas" required>
+                            </div>
+                        </div>
+                        <div class="col-md-12" style="margin-top: 23px;">
+                            <button class="btn btn-primary" style="width: 200px;">ENVIAR</button>
+                        </div>
+                    </form> 
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+    </main>
+
+    <footer>
+
+    </footer>
+    
+</body>
+</html>
